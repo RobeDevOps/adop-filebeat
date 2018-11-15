@@ -8,5 +8,5 @@ RUN rm /usr/share/filebeat/modules.d/*
 COPY ./modules.d/ /usr/share/filebeat/modules.d/
 
 USER root
-RUN chown -R root:filebeat /usr/share/filebeat/*
+RUN chown -R filebeat:filebeat /usr/share/filebeat/* & chmod -R go-w /usr/share/filebeat/
 USER filebeat
